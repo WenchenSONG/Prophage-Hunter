@@ -10,7 +10,9 @@ Identifying active prophages is critical for studying coevolution of phage and b
 System requirements: Linux
 Software involved: blast, nterproscan, stringtie, Cufflinks, R-3.5, genemark (the latest version is sufficient, see software.list for details)
 1. download and install the above softwares and update the absolute path to software.list
-2. run sh generate.sh software.list to generate prophage_hunter_RUN.sh
+2. download database "steps" from https://drive.google.com/drive/folders/18FuMPNeXBmpeAVOOb1Vc9aQYgMTD0iRZ?usp=share_link
+3. put folder "steps" under "all_script"
+4. run sh generate.sh software.list to generate prophage_hunter_RUN.sh
 
 ## Usage
 
