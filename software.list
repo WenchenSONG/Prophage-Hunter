@@ -1,0 +1,9 @@
+blastx /Path/bin/blastx ./all_script/prophage_hunter_step1_4
+interproscan.sh /Path/iprscan/interproscan-5.25-64.0/interproscan.sh ./all_script/prophage_hunter_step1_4
+stringtie /Path/stringtie-2.1.4.Linux_x86_64/stringtie ./all_script/Step2
+cuffcompare /Path/Cufflinks/cufflinks-2.2.1.Linux_x86_64/cuffcompare ./all_script/Step2
+blastp /Path/anconda2/bin/blastp ./all_script/prophage_hunter_step6
+interproscan.sh /Path/iprscan/interproscan-5.25-64.0/interproscan.sh ./all_script/prophage_hunter_step6
+blastn /Path/bin/blastn ./all_script/steps/Identifying_closest_phage.pl
+Rscript /Path/bin/Rscript ./all_script/prophage_hunter_step9
+gmsuite /Path/genemark_suite_linux_64/gmsuite ./all_script/steps/Calculating_PL_TO_AAC.pl 
