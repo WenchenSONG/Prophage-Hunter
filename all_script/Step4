@@ -1,0 +1,6 @@
+mkdir Step4.Calculating_PL_TO_AAC
+cd Step4.Calculating_PL_TO_AAC
+perl ../all_script/steps/Calculating_PL_TO_AAC.pl
+cd ..
+
+

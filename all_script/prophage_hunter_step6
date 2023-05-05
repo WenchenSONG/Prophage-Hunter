@@ -1,0 +1,19 @@
+mkdir Step6.Annotation
+cd Step6.Annotation
+cat ../Step4.Calculating_PL_TO_AAC/Candidate_*.seq.Tab | sort | uniq > Candidate_all.seq.Tab
+perl ../all_script/steps/Tab_to_fa.pl Candidate_all.seq.Tab Candidate_all.seq.fa
+/Path/anconda2/bin/blastp -query Candidate_all.seq.fa -db ../all_script/steps/protein.faa -out out.outfmt6.txt -outfmt "6 qaccver saccver pident length mismatch ppos gapopen qstart qend sstart send evalue bitscore qlen slen ssciname sskingdom staxid stitle" -num_threads 12 -max_target_seqs 1 -max_hsps 1 -seg no
+sort out.outfmt6.txt | uniq > out.outfmt6.uniq.txt
+/Path/iprscan/interproscan-5.25-64.0/interproscan.sh -dp -f tsv -goterms -i Candidate_all.seq.fa -appl Pfam -iprlookup -o output.txt -cpu 12
+sort -t $'\t' -k1,1 -k7,7n -k8,8n output.txt -o output.sorted.txt
+cut -f1,6 output.sorted.txt > pre_iprscan.pfam.txt
+cut -f1,13 output.sorted.txt > pre_iprscan.iprscan.txt
+cut -f1,14 output.sorted.txt > pre_iprscan.GO.txt
+perl ../all_script/steps/to_marker.pl pre_iprscan.pfam.txt pre_iprscan.iprscan.txt pre_iprscan.GO.txt Marker.txt
+grep ">" Candidate_all.seq.fa | cut -f2 -d ">" | sort | uniq > gene_list.txt
+perl ../all_script/steps/fa_Length.pl Candidate_all.seq.fa Candidate_all.seq.Len.txt
+perl ../all_script/steps/Annotation.pl
+cd ..
+
+
+

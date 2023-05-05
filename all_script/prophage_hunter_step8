@@ -1,0 +1,5 @@
+mkdir Step8.Generating_final_outputs
+cd Step8.Generating_final_outputs
+perl ../all_script/steps/Generating_final_outputs.pl
+cd ..
+

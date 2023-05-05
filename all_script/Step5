@@ -1,0 +1,6 @@
+mkdir Step5.Scoring
+cd Step5.Scoring
+perl ../all_script/steps/Scoring.pl
+cd ..
+
+

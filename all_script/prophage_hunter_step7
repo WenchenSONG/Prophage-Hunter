@@ -1,0 +1,5 @@
+mkdir Step7.Identifying_closest_phage
+cd Step7.Identifying_closest_phage
+perl ../all_script/steps/Identifying_closest_phage.pl
+cd ..
+

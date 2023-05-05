@@ -1,0 +1,5 @@
+mkdir Step3.Extending_to_termini_repeats
+cd Step3.Extending_to_termini_repeats
+perl ../all_script/steps/Extending_to_termini_repeats.pl ../Step2.Clustering_based_on_INF_ASB/Cluster.gtf
+cd ..
+
