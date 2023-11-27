@@ -1,8 +1,8 @@
 mkdir Step2.Clustering_based_on_INF_ASB
 cd Step2.Clustering_based_on_INF_ASB
 perl ../all_script/steps/FASTA_to_fa.1.pl ../Input.fasta ../Input.fa
-/Path/stringtie-2.1.4.Linux_x86_64/stringtie.sh --merge -g 5000 -o /Path/stringtie-2.1.4.Linux_x86_64/stringtie_merged.5000.pre_integrase.gtf ../Step1.Identifying_core_elements/ASB/ASB.track.gtf ../Step1.Identifying_core_elements/HYP/HYP.track.gtf ../Step1.Identifying_core_elements/INF/INF.track.gtf ../Step1.Identifying_core_elements/UNS/UNS.track.gtf
+stringtie --merge -g 5000 -o string_tie_merged.5000.pre_integrase.gtf ../Step1.Identifying_core_elements/ASB/ASB.track.gtf ../Step1.Identifying_core_elements/HYP/HYP.track.gtf ../Step1.Identifying_core_elements/INF/INF.track.gtf ../Step1.Identifying_core_elements/UNS/UNS.track.gtf
 cat ../Step1.Identifying_core_elements/INF/INF.track.gtf ../Step1.Identifying_core_elements/ASB/ASB.track.gtf ../Step1.Identifying_core_elements/PAC/PAC.track.gtf ../Step1.Identifying_core_elements/integrase/integrase.track.gtf > INF_ASB_PAC_integrase.gtf
-/Path/Cufflinks/cufflinks-2.2.1.Linux_x86_64/cuffcompare -r INF_ASB_PAC_integrase.gtf -R -s ../Input.fa /Path/stringtie-2.1.4.Linux_x86_64/stringtie_merged.5000.pre_integrase.gtf
+cuffcompare -r INF_ASB_PAC_integrase.gtf -R -s ../Input.fa string_tie_merged.5000.pre_integrase.gtf
 grep "gene_name" cuffcmp.combined.gtf > Cluster.gtf
 cd ..
