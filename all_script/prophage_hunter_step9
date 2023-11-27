@@ -1,5 +1,5 @@
 mkdir Step9.24
 cd Step9.24
 perl ../all_script/steps/24.pl
-/Path/bin/Rscript ../all_script/steps/lasso_model_v4.R 24.txt 24.result.txt
+Rscript ../all_script/steps/lasso_model_v4.R 24.txt 24.result.txt
 cd ..
