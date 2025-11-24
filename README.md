@@ -8,23 +8,37 @@ Identifying active prophages is critical for studying coevolution of phage and b
 
 ## Install
 
-System requirements: Linux
+System requirements: 
+
+Linux
 
 Software involved: 
+
 blastn: 2.16.0+
+
 InterProScan version 5.59-91.0
+
 stringtie 2.1.7
+
 cufflinks v2.2.1
+
 R 3.5
+
 Genemark (GenemarkS V4.30, see software.list for details)
-1. download and install the above softwares and update the absolute path to software.list(Must make sure the absolute path, like home/xxx/xxxx/software !!!)
+
+1. download and install the above softwares and update the absolute path to software.list (Must make sure the absolute path, like home/xxx/xxxx/software !!!).
+   
    Note: A conda environment installation is also reasonable and better.
+   
    conda create -n prophagehunter -c bioconda -c conda-forge r-base=3.5 blast interproscan stringtie cufflinks
-   conda install -c conda-forge r-glmnet r-caret ##(for R)
+   
    conda activate prophagehunter
+   
+   conda install -c conda-forge r-glmnet r-caret ##(for R)
+   
 3. download database "steps" from https://drive.google.com/drive/folders/18FuMPNeXBmpeAVOOb1Vc9aQYgMTD0iRZ?usp=share_link
 4. put folder "steps" under "all_script"
-5. run sh generate.sh software.list to generate prophage_hunter_RUN.sh (This step is to update the absolute running path of the software. You can only run it once. You can also try manually replacing the absolute path of the software in all_script).
+5. 'run sh generate.sh software.list' to generate prophage_hunter_RUN.sh (This step is to update the absolute running path of the software. It is only allowed to run once to avoid adding the duplicated absolute path. Otherwise, you can also try manually replacing the absolute path of the software in all_script).
 
 
 ## Usage
@@ -35,9 +49,11 @@ Note: contig filters under 10k are not processed.
 2. Run sh /"installation path"/prophage_hunter_RUN.sh in the current directory
 
 3. As shown in the picture below
+   
 ![image](https://user-images.githubusercontent.com/122762987/236393472-82576f87-0d44-4a4d-9971-2c1a43426ae5.png)
 
 4. Results：.../Step8.Generating_final_outputs/01.Main_output.txt
+   
 ![image](https://user-images.githubusercontent.com/122762987/236393765-4032b9f7-68a4-4342-9908-25c2fa7bac9b.png)
 
 Note： An example for output files updated on 20251124.
@@ -47,4 +63,5 @@ Note： An example for output files updated on 20251124.
 Wenchen Song, Hai-Xi Sun, Carolyn Zhang, Li Cheng, Ye Peng, Ziqing Deng, Dan Wang, Yun Wang, Ming Hu, Wenen Liu, Huanming Yang, Yue Shen, Junhua Li, Lingchong You, Minfeng Xiao, Prophage Hunter: an integrative hunting tool for active prophages, Nucleic Acids Research, Volume 47, Issue W1, 02 July 2019, Pages W74–W80, https://doi.org/10.1093/nar/gkz380
 
 Acknowledgement:
+
 We are very grateful to Dr. Bo XING and Ms. Min LI for their technical support and code optimization for our project. Thanks for their help.
